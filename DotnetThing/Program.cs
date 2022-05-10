@@ -7,6 +7,9 @@ var path = Path.Join("data", fileName);
 if(File.Exists(path)) {
     var content = File.ReadAllText(path);
     current = int.Parse(content);
+} else {
+    Directory.CreateDirectory("data");
+    File.CreateText(path);
 }
 
 Console.WriteLine($"Current is {current}");
